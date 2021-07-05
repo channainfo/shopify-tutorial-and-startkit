@@ -17,6 +17,8 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Dotenv::Railtie.load if Rails.env.development? || Rails.env.test?
+
 module DarkRoller
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -29,5 +31,8 @@ module DarkRoller
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # sidekiq adapter
+    config.active_job.queue_adapter = :sidekiq
   end
 end

@@ -112,8 +112,13 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.9)
+    connection_pool (2.2.5)
     crass (1.0.6)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
     factory_bot (6.2.0)
@@ -228,6 +233,7 @@ GEM
       ffi (~> 1.0)
     redirect_safely (1.0.0)
       activemodel
+    redis (4.3.1)
     ruby2_keywords (0.0.4)
     ruby_dep (1.5.0)
     sass (3.7.4)
@@ -254,6 +260,10 @@ GEM
       rails (> 5.2.1, < 6.2)
       redirect_safely (~> 1.0)
       shopify_api (~> 9.4)
+    sidekiq (6.2.1)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -296,6 +306,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   coffee-rails (~> 4.2)
+  dotenv-rails
   factory_bot_rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
@@ -309,6 +320,7 @@ DEPENDENCIES
   rspec-support!
   sass-rails (~> 5.0)
   shopify_app (~> 18.0)
+  sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
